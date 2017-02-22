@@ -3,17 +3,19 @@ from html.parser import HTMLParser
 
 PLAYER_START_STR = '/players/*/'
 TEAM_START_STR = '/teams/'
+WS_COL_NUM = 5
 
 class TradeHtmlParser(HTMLParser):
 
     def __init__(self, trade_id):
         HTMLParser.__init__(self)
         self.data = {'trade_id': [], 'date': [], 'player': [],
-                     'from': [], 'to': []}
+                     'from': [], 'ws_from': [], 'to': [], 'ws_to': []}
         #print('initializing')
         self.trade_id = trade_id
         self.date = ''
         self.state = 'NT'
+        self.col_count = 0
 
     def unknown_decl(self, data):
         print('got to unknown')
@@ -47,20 +49,40 @@ class TradeHtmlParser(HTMLParser):
             ref = attrs[0][1]
             team = ref[len(TEAM_START_STR): -1]
             self.data['from'].append(team)
-            self.state = 'T2'
+            self.state = 'WS1'
+            self.col_count = 0
 
-        #team traded to
+        # WS for team traded from
+        elif self.state == 'WS1' and tag == 'td':
+            self.col_count += 1
+
+        # team traded to
         elif self.state == 'T2' and tag == 'a':
             ref = attrs[0][1]
             print(ref)
             team = ref[len(TEAM_START_STR): -1]
             self.data['to'].append(team)
-            self.state = 'PL'
+            self.state = 'WS2'
+            self.col_count = 0
+
+        # WS for team traded to
+        elif self.state == 'WS2' and tag == 'td':
+            self.col_count += 1
 
     def handle_data(self, d):
         if self.state == 'IT':
             self.date = d
             self.state = 'TB'
+        elif self.state == 'WS1' and self.col_count == WS_COL_NUM:
+            if d == '\\n':
+                d = '0'
+            self.data['ws_from'].append(float(d))
+            self.state = 'T2'
+        elif self.state == 'WS2' and self.col_count == WS_COL_NUM:
+            if d == '\\n':
+                d = '0'
+            self.data['ws_to'].append(float(d))
+            self.state = 'PL'
 
     def handle_endtag(self, tag):
         if self.state == 'PL' and tag == 'table':
