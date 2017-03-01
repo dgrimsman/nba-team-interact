@@ -10,7 +10,7 @@ class TradeHtmlParser(HTMLParser):
     def __init__(self, trade_id):
         HTMLParser.__init__(self)
         self.data = {'trade_id': [], 'date': [], 'player': [],
-                     'from': [], 'ws_from': [], 'to': [], 'ws_to': []}
+                     'from_team': [], 'ws_from': [], 'to_team': [], 'ws_to': []}
         #print('initializing')
         self.trade_id = trade_id
         self.date = ''
@@ -19,6 +19,14 @@ class TradeHtmlParser(HTMLParser):
 
     def unknown_decl(self, data):
         print('got to unknown')
+
+    def rec_ws_from(self, ws='0'):
+        self.data['ws_from'].append(ws)
+        self.state = 'T2'
+
+    def rec_ws_to(self, ws='0'):
+        self.data['ws_to'].append(ws)
+        self.state = 'PL'
 
     def handle_starttag(self, tag, attrs):
         # start of a trade
@@ -48,25 +56,29 @@ class TradeHtmlParser(HTMLParser):
         elif self.state == 'T1' and tag == 'a':
             ref = attrs[0][1]
             team = ref[len(TEAM_START_STR): -1]
-            self.data['from'].append(team)
+            self.data['from_team'].append(team)
             self.state = 'WS1'
             self.col_count = 0
 
         # WS for team traded from
         elif self.state == 'WS1' and tag == 'td':
+            if self.col_count == WS_COL_NUM:
+                self.rec_ws_from()
             self.col_count += 1
 
         # team traded to
         elif self.state == 'T2' and tag == 'a':
             ref = attrs[0][1]
-            print(ref)
+            # print(ref)
             team = ref[len(TEAM_START_STR): -1]
-            self.data['to'].append(team)
+            self.data['to_team'].append(team)
             self.state = 'WS2'
             self.col_count = 0
 
         # WS for team traded to
         elif self.state == 'WS2' and tag == 'td':
+            if self.col_count == WS_COL_NUM:
+                self.rec_ws_to()
             self.col_count += 1
 
     def handle_data(self, d):
@@ -76,13 +88,11 @@ class TradeHtmlParser(HTMLParser):
         elif self.state == 'WS1' and self.col_count == WS_COL_NUM:
             if d == '\\n':
                 d = '0'
-            self.data['ws_from'].append(float(d))
-            self.state = 'T2'
+            self.rec_ws_from(ws=d)
         elif self.state == 'WS2' and self.col_count == WS_COL_NUM:
             if d == '\\n':
                 d = '0'
-            self.data['ws_to'].append(float(d))
-            self.state = 'PL'
+            self.rec_ws_to(ws=d)
 
     def handle_endtag(self, tag):
         if self.state == 'PL' and tag == 'table':
