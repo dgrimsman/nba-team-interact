@@ -1,0 +1,2 @@
+export PGPASSWORD='183S!02MkV5hk$KF'
+psql -h 127.0.0.1 -U bball bball_db
