@@ -7,22 +7,11 @@ from sqlalchemy import create_engine
 # connect to database
 conn_str = 'postgresql://bball:183S!02MkV5hk$KF@127.0.0.1:5432/bball_db'
 eng = create_engine(conn_str)
-# eng.execute("drop table if exists rosters;")
-# query = "create table rosters ( \
-#         season varchar(9), \
-#         player varchar(40), \
-#         team varchar(3), \
-#         league varchar(5));"
-# eng.execute(query)
-# eng.execute("drop table if exists players;")
-# query = "create table players ( \
-#         id varchar(40), \
-#         name varchar(50));"
-# eng.execute(query)
-res = eng.execute('select id from players order by id desc limit 1;')
-for row in res:
-    c = row[0][0]
-c = 'x'
+
+# res = eng.execute('select id from players order by id desc limit 1;')
+# for row in res:
+#    c = row[0][0]
+c = 'w'
 print('starting at letter ' + c.upper())
 base_url = 'http://www.basketball-reference.com'
 
@@ -33,9 +22,10 @@ while letter != c:
     letters.pop(0)
     letter = letters[0]
 
-team_data = pd.DataFrame(columns=['season', 'player', 'team', 'league'])
-player_data = pd.DataFrame(columns=['id', 'name'])
 for letter in letters:
+    team_data = pd.DataFrame(columns=['season', 'player', 'team', 'league',
+                                      'ws'])
+    player_data = pd.DataFrame(columns=['id', 'name'])
     l_parser = PlayerLetterHtmlParser()
     letter_url = '{}/players/{}/'.format(base_url, letter)
     try:
@@ -51,6 +41,9 @@ for letter in letters:
         player_url = base_url + player
         page = urllib.request.urlopen(player_url)
         src = str(page.read())
+        f = open('tmp.html', 'w')
+        f.write(src)
+        f.close()
         p_parser.feed(src)
         p_df = pd.DataFrame(p_parser.p_data)
         t_df = pd.DataFrame(p_parser.t_data)
@@ -64,5 +57,5 @@ for letter in letters:
     eng.execute(query)
     team_data.to_sql('rosters_df', eng)
     query = "insert into rosters \
-             select season, player, team, league from rosters_df;"
+             select season, player, team, league, ws from rosters_df;"
     eng.execute(query)
