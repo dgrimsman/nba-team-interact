@@ -37,15 +37,13 @@ As mention above, there are 3 ways that a team can acquire talent: the draft, tr
   <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/ovt_90-99.png" width="250">
 </div>
 
-Similar images for the other time periods can be found [here](https://github.com/dgrimsman/nba-team-interact/tree/master/docs/imgs). Each of these charts compares two methods for talent acquisition. The resounding message that comes from this is that for many teams, the largest source of win shares is through trades. In the 90s, Utah happens to be an exception to this, because they drafted Karl Malone and John Stockton in the 80s: two hall-of-famers that played 18 years together on the same team. Likewise we see San Antonio in the 00s with many win shares from the draft, due to Tim Duncan and other smart picks. For most teams, though, draft is second, and other is farther behind. Thus an analysis of the  
-
-
+Similar images for the other time periods can be found [here](https://github.com/dgrimsman/nba-team-interact/tree/master/docs/imgs). Each of these charts compares two methods for talent acquisition. The resounding message that comes from this is that for many teams, the largest source of win shares is through trades. In the 90s, Utah happens to be an exception to this, because they drafted Karl Malone and John Stockton in the 80s: two hall-of-famers that played 18 years together on the same team. Likewise we see San Antonio in the 00s with many win shares from the draft, due to Tim Duncan and other smart picks. For most teams, though, draft is second, and other is farther behind. Thus an analysis of trades is important to understanding how teams think and interact.
 
 ### Trading Communities
-* Need a clustering algorithm that leverages weighted edges
-* Modularity measure
-* Some results for different decades
-<!--![Trade Communities 1990-1999](https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png "Trade Communities 1990-1999")-->
+For the first analysis of the trading network, we leverage community detection, a common problem addressed in social networks. Generally, the goal is to find communities of people (or in our this case, teams) that have close interactions with each other and not with others outside the community. Here we use the trade data to create a graph, where each node is a team and each directed edge represents a player going from one team to another. The weight on the edge is the WS that the player earns with the new team. Thus, the "strength" of the interaction is how impactful the trade was, at least for one team.
+
+While several algorithms offer community detection, this project uses the louvain method, implemented in python [here](http://perso.crans.org/aynaud/communities/). Given a graph, the louvain method seeks to partition the nodes in order to minimize the *modularity* of the partition. In precise terms
+<a href="https://www.codecogs.com/eqnedit.php?latex=Q&space;=&space;\frac{1}{2m}&space;\sum_{ij}\Big[&space;A_{ij}&space;-&space;\frac{k_ik_j}{2m}\Big]\delta(c_i,&space;c_j)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Q&space;=&space;\frac{1}{2m}&space;\sum_{ij}\Big[&space;A_{ij}&space;-&space;\frac{k_ik_j}{2m}\Big]\delta(c_i,&space;c_j)" title="Q = \frac{1}{2m} \sum_{ij}\Big[ A_{ij} - \frac{k_ik_j}{2m}\Big]\delta(c_i, c_j)" /></a>
 
 <div figure{ display: inline-block;}, img{width: 250;}>
 <figure>
