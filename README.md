@@ -84,12 +84,20 @@ Of course, the above presentation is a very cursory look at the algorithm, but t
 </figure>
 </div>
 
-In these diagrams, the size of the node indicates the number of WS "flow in" to the team. Small nodes are teams that are giving away WS without getting equal value in return. There are a few observations that can be made about these communities. First, notice that the thick lines (more impactful trades) generally occur within the communities. Next we see that the algorithm chose 6 clusters for the first time period, 4 for the last time period, and 5 for the rest. This is somewhat surprising, considering there are only 24 teams in the 1975-1984 time period as opposed to 30 in 2000-2009. It seems to imply that the NBA is becoming more tight-knit in terms of trading. We see less "blockbuster" trades, and more of the medium-sized trades. Finally, we can see that these groupings tend to be fluid - in other words, there's not a sense of tight groups staying constant throughout time.
+In these diagrams, the size of the node indicates the number of WS "flow in" to the team. Small nodes are teams that are giving away WS without getting equal value in return. There are a few observations that can be made about these communities. First, notice that the thick lines (more impactful trades) generally occur within the communities. Next we see that the algorithm chose 6 clusters for the first time period, 4 for the last time period, and 5 for the rest. This is somewhat surprising, considering there are only 24 teams in the 1975-1984 time period as opposed to 30 in 2000-2009. It seems to imply that the NBA is becoming more tight-knit in terms of trading. We see less "blockbuster" trades, and more of the medium-sized trades. Finally, we can see that these groupings tend to be fluid - in other words, there does not appear to be tight groups staying constant throughout time.
 
 ### Biclustering with Players
-* Show an example of biclustering with synthetic data
-* Summary of algorithm
-* Some results from different decades
+Another method we leverage in grouping teams is biclustering. Here we group teams based on what players have played for them: teams within a cluster are teams that have had similar players. Note that if a player has played for two teams, it need not be the case that he was traded from one to the other: he could have been waived and then signed, or perhaps he was traded to a 3rd team in the intermediate. This type of clustering also does not take into account the impact of WS: all edges in the graph will be weighted equally.
+
+This project uses the python implmentation of biclustering found [here](http://scikit-learn.org/stable/modules/biclustering.html). The classic biclustering problem is that of trying to group documents by which words they contain while simultaneously grouping words by which documents they're in. Some synthetic data might look like this:
+
+<img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/shuffled.png" width="400">
+
+In the classic example, each row would represent a word and each column a document. Then the shade of the cell represents how many times that word appeared in that document. In our case, The rows are be players and the columns teams. Instead of shading, we have onyl a binary value: black if the player played on that team and white otherwise. The biclustering algorithm simply (we say "simply", but this is an NP-Hard problem in general) reorders the rows and columns so that both rows and columns are clustered:
+
+<img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/matched.png" width="400">
+
+Of course, real-world data is rarely this clean, and the NBA data is no exception. Generally, biclustering does well to find a number of tight clusters, and then one cluster is usually large and sparse. We will see this in the examples below. Also, a challenge with biclustering (unlike community detection) is that the algorithm does not determine on its own the optimal number of clusters. In this project we use 6, to allow for a small cluster, but also to be on the same order of clusters as the community detection. Certainly there is room for more tuning in this area.
 
 ### Comparison Between Partitions
 * Show the partitions for different decades
