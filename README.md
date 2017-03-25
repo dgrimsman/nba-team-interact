@@ -21,7 +21,7 @@
 * Need a clustering algorithm that leverages weighted edges
 * Modularity measure
 * Some results for different decades
-
+![alt text](https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm90-99.png "Logo Title Text 1")
 
 ### Biclustering with Players
 * Show an example of biclustering with synthetic data
