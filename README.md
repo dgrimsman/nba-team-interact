@@ -50,7 +50,7 @@ One could think of this metric as measuring the density of edges within each com
 1. For each node, and each neighbor of that node, see whether moving the node into the neighbor's community would increase the modularity.
 2. Reassign communities suing this information
 
-Of course, the above presentation is a very cursory look at the algorithm, but the goal is to communicate what the algorithm does on a high level. For each of the six time periods considered, the optimal clustering based on trade data is
+Of course, the above presentation is a very cursory look at the algorithm, but the goal is to communicate what the algorithm does on a high level. For each of the six time periods considered, the optimal clustering based on trade data is:
 
 <div figure{ display: inline-block;}>
 <figure>
@@ -83,6 +83,8 @@ Of course, the above presentation is a very cursory look at the algorithm, but t
   <figcaption>Years 2000-2009</figcaption>
 </figure>
 </div>
+
+In these diagrams, the size of the node indicates the number of WS "flow in" to the team. Small nodes are teams that are giving away WS without getting equal value in return. There are a few observations that can be made about these communities. First, notice that the thick lines (more impactful trades) generally occur within the communities. Next we see that the algorithm chose 6 clusters for the first time period, 4 for the last time period, and 5 for the rest. This is somewhat surprising, considering there are only 24 teams in the 1975-1984 time period as opposed to 30 in 2000-2009. It seems to imply that the NBA is becoming more tight-knit in terms of trading. We see less "blockbuster" trades, and more of the medium-sized trades. Finally, we can see that these groupings tend to be fluid - in other words, there's not a sense of tight groups staying constant throughout time.
 
 ### Biclustering with Players
 * Show an example of biclustering with synthetic data
