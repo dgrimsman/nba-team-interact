@@ -13,6 +13,7 @@ In order to accomplish the purpose set forth in this project, we describe 3 spec
 2. Cluster teams into communities based on how impactful trading is among the teams. In other words, teams will be considered in a community if their trade interactions are impactful in terms of wins.
 3. Cluster teams based on which players have played for them. In this case, teams will be considered in a cluster if similar players have played for them.
 4. We will compare the clusters form Steps 2 and 3 to see what insights might be drawn from them.
+
 Since these are goals relevant to a given time period, we show graphs and draw conclusions based on data from 6 different time periods: 1975-84, 1980-89, 1985-94, 1990-99, 1995-2004, and 2000-2009. Cutting off at 2009 allows analysis for the impact of a given trade.
 
 ### Gathering Data
@@ -28,7 +29,15 @@ In order to analyze the impact that a trade has on a team, we use the metric kno
 While this metric is not immune to criticism, it is outside the scope of this project to invent a new one. Since WS appears to be a metric recognized in the sports statistics community, we use it here to gauge a player's productivity. To give a sense of the order of magnitude for WS, Kareem Abdul-Jabbar has the most career WS at 273.4 and the highest for a season at 25.4. Most players in the league have fewer than 7 per season. Note also that WS can be negative, although generally such WS values are not less than -1.
 
 ### Acquiring Talent
-As mention above, there are 3 ways that a team can acquire talent: the draft, trades, and other. However, much has been made as to which of these 3 is the best. Common thought is that big-market teams have the luxury of attracting free agents, since players can make more money from endorsements in larger media markets. In addition, these teams are often willing to incur the penalties for spending above the salary cap, since their franchises are often more profitable. In contrast to this, there do currently exist small-market teams that seem to attract good free agents: San Antonio or Cleveland, for instance. Another point to consider is that many winning teams (small and large market) seem to acquire their best players through the draft: Magic Johnson and Larry Bird, for instance, were franchise staples their entire careers. Thus it is worth looking at some of the best teams in given periods of time to see to what source their wins can be attributed.
+As mention above, there are 3 ways that a team can acquire talent: the draft, trades, and other. However, much has been made as to which of these 3 is the best. Common thought is that big-market teams have the luxury of attracting free agents, since players can make more money from endorsements in larger media markets. In addition, these teams are often willing to incur the penalties for spending above the salary cap, since their franchises are often more profitable. In contrast to this, there do currently exist small-market teams that seem to attract good free agents: San Antonio or Cleveland, for instance. Another point to consider is that many winning teams (small and large market) seem to acquire their best players through the draft: Magic Johnson and Larry Bird, for instance, were franchise staples their entire careers. Thus it is worth looking at some of the best teams in given periods of time to see to what source their wins can be attributed. Consider the figure below:
+
+<div figure{ display: inline-block;}>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/dvt_90-99.png" width="250">
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/dvo_90-99.png" width="250">
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/ovt_90-99.png" width="250">
+</div>
+
+
 
 ### Trading Communities
 * Need a clustering algorithm that leverages weighted edges
