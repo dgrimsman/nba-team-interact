@@ -1,1 +1,1 @@
-\copy (select distinct(player, teams.curr) from rosters inner join teams on rosters.team=teams.abbr where cast(substring(season, 0, 5) as integer) >= 1990 and cast(substring(season, 0, 5) as integer) <= 1999 and league = 'NBA') to 'rosters.csv' with csv
+\copy (select distinct(player, teams.curr) from rosters inner join teams on rosters.team=teams.abbr where cast(substring(season, 0, 5) as integer) >= 2000 and cast(substring(season, 0, 5) as integer) <= 2009 and league = 'NBA') to '../csv/rosters_00-09.csv' with csv
