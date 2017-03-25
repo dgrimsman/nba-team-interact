@@ -48,6 +48,11 @@
   <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
   <figcaption>Years 1990-1999</figcaption>
 </figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
+  <figcaption>Years 1990-1999</figcaption>
+</figure>
 </div>
 
 ### Biclustering with Players
@@ -58,6 +63,11 @@
 ### Comparison Between Partitions
 * Show the partitions for different decades
 <div figure{ display: inline-block;}>
+<figure>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_90-99.png" width="250">
+  <figcaption>Years 1990-1999</figcaption>
+</figure>
+
 <figure>
   <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_90-99.png" width="250">
   <figcaption>Years 1990-1999</figcaption>
