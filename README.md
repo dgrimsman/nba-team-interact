@@ -17,15 +17,17 @@
 ### Win Shares
 * Brief explanation and why we use them
 
+### Acquiring Talent
+
 ### Trading Communities
 * Need a clustering algorithm that leverages weighted edges
 * Modularity measure
 * Some results for different decades
 <!--![Trade Communities 1990-1999](https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png "Trade Communities 1990-1999")-->
 
-<div figure{ display: inline-block;}>
+<div figure{ display: inline-block;}, img{width: 250;}>
 <figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png">
   <figcaption>Years 1990-1999</figcaption>
 </figure>
 
