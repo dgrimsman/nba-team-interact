@@ -27,8 +27,18 @@
 
 <div figure{ display: inline-block;}, img{width: 250;}>
 <figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png">
-  <figcaption>Years 1990-1999</figcaption>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_75-84.png" width="250">
+  <figcaption>Years 1975-1984</figcaption>
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_80-89.png" width="250">
+  <figcaption>Years 1980-1989</figcaption>
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_85-94.png" width="250">
+  <figcaption>Years 1985-1994</figcaption>
 </figure>
 
 <figure>
@@ -37,23 +47,13 @@
 </figure>
 
 <figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
-  <figcaption>Years 1990-1999</figcaption>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_95-04.png" width="250">
+  <figcaption>Years 1995-2004</figcaption>
 </figure>
 
 <figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
-  <figcaption>Years 1990-1999</figcaption>
-</figure>
-
-<figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
-  <figcaption>Years 1990-1999</figcaption>
-</figure>
-
-<figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
-  <figcaption>Years 1990-1999</figcaption>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_00-09.png" width="250">
+  <figcaption>Years 2000-2009</figcaption>
 </figure>
 </div>
 
@@ -66,8 +66,18 @@
 * Show the partitions for different decades
 <div figure{ display: inline-block;}>
 <figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_90-99.png" width="250">
-  <figcaption>Years 1990-1999</figcaption>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_75-84.png" width="250">
+  <figcaption>Years 1975-1984</figcaption>
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_80-89.png" width="250">
+  <figcaption>Years 1980-1989</figcaption>
+</figure>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_85-94.png" width="250">
+  <figcaption>Years 1985-1994</figcaption>
 </figure>
 
 <figure>
@@ -76,23 +86,13 @@
 </figure>
 
 <figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_90-99.png" width="250">
-  <figcaption>Years 1990-1999</figcaption>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_95-04.png" width="250">
+  <figcaption>Years 1995-2004</figcaption>
 </figure>
 
 <figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_90-99.png" width="250">
-  <figcaption>Years 1990-1999</figcaption>
-</figure>
-
-<figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_90-99.png" width="250">
-  <figcaption>Years 1990-1999</figcaption>
-</figure>
-
-<figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_90-99.png" width="250">
-  <figcaption>Years 1990-1999</figcaption>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_00-09.png" width="250">
+  <figcaption>Years 2000-2009</figcaption>
 </figure>
 </div>
 
