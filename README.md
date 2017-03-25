@@ -100,7 +100,8 @@ In the classic example, each row would represent a word and each column a docume
 Of course, real-world data is rarely this clean, and the NBA data is no exception. Generally, biclustering does well to find a number of tight clusters, and then one cluster is usually large and sparse. We will see this in the examples below. Also, a challenge with biclustering (unlike community detection) is that the algorithm does not determine on its own the optimal number of clusters. In this project we use 6, to allow for a small cluster, but also to be on the same order of clusters as the community detection. Certainly there is room for more tuning in this area.
 
 ### Comparison Between Partitions
-* Show the partitions for different decades
+We now show how the clusters given by the community detection compare to the clusters given by the biclustering algorithm. In order to explore this we use the following charts:
+
 <div figure{ display: inline-block;}>
 <figure>
   <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/biclust_75-84.png" width="250">
@@ -133,8 +134,10 @@ Of course, real-world data is rarely this clean, and the NBA data is no exceptio
 </figure>
 </div>
 
+In these charts, the physical location of the nodes matches that of the diagrams in the community detection. For further emphasis, black ovals were placed around those nodes that were determined to be in the same cluster. The difference is that the colors now represent the clusters from the biclustering. Thus, if both sets of clusterings matched, every node inside a circle would also be the same color. While we see one instance where this is true, the general observation is that the two clusterings are not in harmony. 
+
 ### Discussion
 * Trades are important
 * Best bet is to analyze 
 
-### Conclusion
+### Conclusion adn Future Work
