@@ -8,9 +8,12 @@ There are three means by which a team can add a player: drafting the player, tra
 The analyses presented here reflect only wins in the regular season, but further analysis could be done to include playoff wins and championships.
 
 ### Goals
-* Analyze how good teams acquire talent
-* Motivates why we want to consider the trade dynamics
-* Compare 2 clusterings
+In order to accomplish the purpose set forth in this project, we describe 3 specific goals:
+1. Plot how many wins for each team can be attributed to each method of talent acquisition: trades, the draft, and other. This will motivate a deeper dive into trade dynamics.
+2. Cluster teams into communities based on how impactful trading is among the teams. In other words, teams will be considered in a community if their trade interactions are impactful in terms of wins.
+3. Cluster teams based on which players have played for them. In this case, teams will be considered in a cluster if similar players have played for them.
+4. We will compare the clusters form Steps 2 and 3 to see what insights might be drawn from them.
+Since these are goals relevant to a given time period, we show graphs and draw conclusions based on data from 6 different time periods: 1975-84, 1980-89, 1985-94, 1990-99, 1995-2004, and 2000-2009. Cutting off at 2009 allows analysis for the impact of a given trade.
 
 ### Gathering Data
 * Comes from basketballreference.com
