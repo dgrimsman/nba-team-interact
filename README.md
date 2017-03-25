@@ -23,7 +23,9 @@ This analysis is very much data-driven, therefore it requires a reliable source 
 The scrapers download the data and store it in a local PostgreSQL database.
 
 ### Win Shares
-* Brief explanation and why we use them
+In order to analyze the impact that a trade has on a team, we use the metric known as win shares (WS). For a comprehensive explanation of WS and how it is calculated, see [here](http://www.basketball-reference.com/about/ws.html). In essence, the goal of WS is to try and account for how many wins that a player contributes to his team over the course of a season. In short WS is a function of many offensive and defensive statistics that are tracked, normalized by the pace of the player's team. Constants in the function have been tuned so that the sum of WS for all players on a team roughly equals the total wins for the team, thus it can be thought of as the player's win contribution.
+
+While this metric is not immune to criticism, it is outside the scope of this project to invent a new one. Since WS appears to be a metric recognized in the sports statistics community, we use it here to gauge a player's productivity. To give a sense of the order of magnitude for WS, Kareem Abdul-Jabbar has the most career WS at 273.4 and the highest for a season at 25.4. Most players in the league have fewer than 7 per season. Note also that WS can be negative, although generally such WS values are not less than -1.
 
 ### Acquiring Talent
 
