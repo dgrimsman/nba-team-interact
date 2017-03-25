@@ -54,6 +54,11 @@ Of course, the above presentation is a very cursory look at the algorithm, but t
 
 <div figure{ display: inline-block;}>
 <figure>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_75-84.png" width="250">
+  <figcaption>Years 1975-1984</figcaption>
+</figure>
+
+<figure>
   <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_80-89.png" width="250">
   <figcaption>Years 1980-1989</figcaption>
 </figure>
