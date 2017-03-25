@@ -22,6 +22,7 @@
 * Modularity measure
 * Some results for different decades
 
+
 ### Biclustering with Players
 * Show an example of biclustering with synthetic data
 * Summary of algorithm
