@@ -22,15 +22,8 @@
 * Modularity measure
 * Some results for different decades
 <!--![Trade Communities 1990-1999](https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png "Trade Communities 1990-1999")-->
-<figure>
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
-  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
-  <figcaption>Years 1990-1999</figcaption>
-</figure>
 
+<div figure{ display: inline-block;}>
 <figure>
   <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
   <figcaption>Years 1990-1999</figcaption>
@@ -51,6 +44,11 @@
   <figcaption>Years 1990-1999</figcaption>
 </figure>
 
+<figure>
+  <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_90-99.png" width="250">
+  <figcaption>Years 1990-1999</figcaption>
+</figure>
+</div>
 
 ### Biclustering with Players
 * Show an example of biclustering with synthetic data
