@@ -42,10 +42,16 @@ Similar images for the other time periods can be found [here](https://github.com
 ### Trading Communities
 For the first analysis of the trading network, we leverage community detection, a common problem addressed in social networks. Generally, the goal is to find communities of people (or in our this case, teams) that have close interactions with each other and not with others outside the community. Here we use the trade data to create a graph, where each node is a team and each directed edge represents a player going from one team to another. The weight on the edge is the WS that the player earns with the new team. Thus, the "strength" of the interaction is how impactful the trade was, at least for one team.
 
-While several algorithms offer community detection, this project uses the louvain method, implemented in python [here](http://perso.crans.org/aynaud/communities/). Given a graph, the louvain method seeks to partition the nodes in order to minimize the *modularity* of the partition. In precise terms
+While several algorithms offer community detection, this project uses the louvain method, implemented in python [here](http://perso.crans.org/aynaud/communities/). Given a graph, the louvain method seeks to partition the nodes in order to maximize the *modularity*, *Q*, of the partition. In precise terms (taken from [Wikipedia](https://en.wikipedia.org/wiki/Louvain_Modularity))
 
-<img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/CodeCogsEqn.gif" width="250">
+<img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/eq.png" width="550">
 
+One could think of this metric as measuring the density of edges within each community versus the density of edges outside the community. The the algorithm runs with the following 2 steps:
+1. For each node, and each neighbor of that node, see whether moving the node into the neighbor's community would increase the modularity.
+2. Reassign communities suing this information
+Of course, the above presentation is a very cursory look at the algorithm, but the goal is to communicate what the algorithm does on a high level. For each time period, the optimal clustering based on trade data is
+
+<div figure{ display: inline-block;}>
 <figure>
   <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_80-89.png" width="250">
   <figcaption>Years 1980-1989</figcaption>
