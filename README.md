@@ -1,9 +1,11 @@
 # Interaction Among NBA Teams
 
 ### The National Basketball Association
-* A brief history
-* 30 teams, 82 games
-* only focus on regular season games
+The National Basketball Association (NBA) is comprised of 30 professional basketball teams. The league was founded in 1946 with 11 franchises, and has since merged with 2 other leagues: the NBL in 1949 and the ABA in 1976. Each season, teams compete for 82 games before a 4-round playoff determines the champion. Thus each team must compete to acquire as much talent as possible, reflected in the staff and players that the team has hired. The purpose of this project to explore how teams acquire on-the-court talent, and analyze how teams interact with one another to accomplish this goal.
+
+There are three means by which a team can add a player: drafting the player, trading to get the player from another team, or signing the player if he is not under contract to another team. Usually this last option is signing the player as a free agent, but we will also lump any other means into this option. Therefore, we refer to it as "other". First we will discuss how successful teams have been gathering talent in the last 40 years, and then we will deep dive into how teams interact, mostly through trading.
+
+The analyses presented here reflect only wins in the regular season, but further analysis could be done to include playoff wins and championships.
 
 ### Goals
 * Analyze how good teams acquire talent
