@@ -44,7 +44,7 @@ For the first analysis of the trading network, we leverage community detection, 
 
 While several algorithms offer community detection, this project uses the louvain method, implemented in python [here](http://perso.crans.org/aynaud/communities/). Given a graph, the louvain method seeks to partition the nodes in order to minimize the *modularity* of the partition. In precise terms
 
-<img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/CodeCogsEqn.gif" width="100">
+<img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/CodeCogsEqn.gif" width="250">
 
 <figure>
   <img src="https://raw.githubusercontent.com/dgrimsman/nba-team-interact/master/docs/imgs/trade_comm_80-89.png" width="250">
