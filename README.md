@@ -49,7 +49,8 @@ While several algorithms offer community detection, this project uses the louvai
 One could think of this metric as measuring the density of edges within each community versus the density of edges outside the community. The the algorithm runs with the following 2 steps:
 1. For each node, and each neighbor of that node, see whether moving the node into the neighbor's community would increase the modularity.
 2. Reassign communities suing this information
-Of course, the above presentation is a very cursory look at the algorithm, but the goal is to communicate what the algorithm does on a high level. For each time period, the optimal clustering based on trade data is
+
+Of course, the above presentation is a very cursory look at the algorithm, but the goal is to communicate what the algorithm does on a high level. For each of the six time periods considered, the optimal clustering based on trade data is
 
 <div figure{ display: inline-block;}>
 <figure>
