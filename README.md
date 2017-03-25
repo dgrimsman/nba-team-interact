@@ -16,8 +16,11 @@ In order to accomplish the purpose set forth in this project, we describe 3 spec
 Since these are goals relevant to a given time period, we show graphs and draw conclusions based on data from 6 different time periods: 1975-84, 1980-89, 1985-94, 1990-99, 1995-2004, and 2000-2009. Cutting off at 2009 allows analysis for the impact of a given trade.
 
 ### Gathering Data
-* Comes from basketballreference.com
-* Had to write python scrapers (links to files?)
+This analysis is very much data-driven, therefore it requires a reliable source of information. We chose to use the site http://basketball-reference.com, since it offers access to draft and trade data, and well as win shares (see below). However, the challenge is that the site does not offer an accessible API, thus custom-written scrapers were created as part of this project. All the scraping files can be found [here](https://github.com/dgrimsman/nba-team-interact/tree/master/scrape). Essentially, 3 tables of data were required:
+1. All player trades that have occurred
+2. All draft picks from every year
+3. The team and win shares (see below) associated with each player for each season he played.
+The scrapers download the data and store it in a local PostgreSQL database.
 
 ### Win Shares
 * Brief explanation and why we use them
